@@ -56,36 +56,34 @@ export function VehicleCard({
         </div>
       </div>
 
-      <div className="relative z-20 flex flex-1 flex-col p-4 md:p-5 pointer-events-none">
-        <h3 className="font-display text-lg font-semibold leading-snug tracking-tight md:text-xl">
+      <div className="relative z-20 flex flex-1 flex-col p-4 pointer-events-none sm:p-5">
+        <h3 className="font-display text-base font-semibold leading-snug tracking-tight sm:text-lg md:text-xl">
           {title}
         </h3>
-        <p className="mt-2 text-xl font-bold text-brand-red md:text-2xl">
+        <p className="mt-2 text-xl font-bold text-brand-red sm:text-2xl">
           {formatPrice(vehicle.price)}
         </p>
-        <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-brand-gray sm:text-sm">
-          <div>
-            <dt className="sr-only">Mileage</dt>
-            <dd>{formatMileage(vehicle.mileage)}</dd>
-          </div>
-          <div>
-            <dt className="sr-only">Transmission</dt>
-            <dd>{vehicle.transmission}</dd>
-          </div>
-          <div>
-            <dt className="sr-only">Fuel</dt>
-            <dd>{vehicle.fuel}</dd>
-          </div>
-          <div>
-            <dt className="sr-only">Location</dt>
-            <dd>{vehicle.location}</dd>
-          </div>
-        </dl>
 
-        <div className="mt-auto flex flex-col gap-2 pt-5 pointer-events-auto">
+        <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-brand-gray sm:mt-4 sm:text-sm">
+          <span>{formatMileage(vehicle.mileage)}</span>
+          <span className="text-brand-black/20" aria-hidden>
+            ·
+          </span>
+          <span>{vehicle.transmission}</span>
+          <span className="text-brand-black/20" aria-hidden>
+            ·
+          </span>
+          <span>{vehicle.fuel}</span>
+          <span className="text-brand-black/20" aria-hidden>
+            ·
+          </span>
+          <span>{vehicle.location}</span>
+        </div>
+
+        <div className="mt-auto flex flex-col gap-2 pt-4 pointer-events-auto sm:pt-5">
           <Link
             href={href}
-            className="inline-flex h-10 items-center justify-center bg-brand-black px-4 text-xs font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-brand-red"
+            className="inline-flex h-11 items-center justify-center bg-brand-black px-4 text-xs font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-brand-red sm:h-10"
           >
             View Vehicle
           </Link>
@@ -93,7 +91,7 @@ export function VehicleCard({
             <WhatsAppButton
               message={vehicleEnquiryMessage(vehicle)}
               label="WhatsApp Enquiry"
-              className="h-10 text-xs"
+              className="h-11 text-xs sm:h-10"
             />
           )}
         </div>

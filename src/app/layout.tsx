@@ -64,7 +64,7 @@ export default function RootLayout({
       <body className="min-h-screen">
         <FavoritesProvider>
           <Navbar />
-          <main className="pb-20 md:pb-0">{children}</main>
+          <main className="min-w-0 overflow-x-hidden pb-24 md:pb-0">{children}</main>
           <Footer />
           <MobileCTA />
         </FavoritesProvider>

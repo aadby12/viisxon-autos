@@ -259,9 +259,9 @@ export function VehicleFilters({ resultCount }: { resultCount: number }) {
   );
 
   return (
-    <>
+    <div className="w-full lg:w-72 lg:shrink-0">
       {/* Desktop sidebar */}
-      <aside className="hidden w-72 shrink-0 lg:block">
+      <aside className="hidden lg:block">
         <div className="sticky top-28 border border-brand-black/8 bg-white p-5">
           <div className="mb-5 flex items-center justify-between">
             <h2 className="font-display text-lg font-semibold">Filters</h2>
@@ -271,16 +271,16 @@ export function VehicleFilters({ resultCount }: { resultCount: number }) {
         </div>
       </aside>
 
-      {/* Mobile trigger */}
-      <div className="mb-4 flex items-center justify-between gap-3 lg:hidden">
-        <p className="text-sm text-brand-gray">
+      {/* Mobile filter bar — full width above results */}
+      <div className="flex w-full items-center justify-between gap-3 border border-brand-black/8 bg-white px-3 py-3 lg:hidden">
+        <p className="min-w-0 text-sm text-brand-gray">
           <span className="font-semibold text-brand-black">{resultCount}</span>{" "}
-          vehicles found
+          found
         </p>
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="inline-flex h-10 items-center gap-2 border border-brand-black/15 bg-white px-4 text-sm font-semibold uppercase tracking-wide"
+          className="inline-flex h-10 shrink-0 items-center gap-2 bg-brand-black px-4 text-xs font-semibold uppercase tracking-wide text-white"
         >
           <SlidersHorizontal size={16} />
           Filters
@@ -297,7 +297,7 @@ export function VehicleFilters({ resultCount }: { resultCount: number }) {
             onClick={() => setOpen(false)}
           />
           <div
-            className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-white p-5 pb-24 shadow-2xl"
+            className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-white p-5 pb-28 shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Vehicle filters"
@@ -324,6 +324,6 @@ export function VehicleFilters({ resultCount }: { resultCount: number }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

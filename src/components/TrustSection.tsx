@@ -46,7 +46,7 @@ export function TrustSection() {
             Why Choose VIixson Autos?
           </h2>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {items.map((item) => (
             <div
               key={item.title}

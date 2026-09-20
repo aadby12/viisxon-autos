@@ -17,10 +17,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-brand-white text-brand-black font-sans antialiased;
+    @apply overflow-x-hidden bg-brand-white text-brand-black font-sans antialiased;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
   }
 
   ::selection {
@@ -42,7 +49,7 @@
   }
 
   .section-pad {
-    @apply py-16 md:py-24;
+    @apply py-12 sm:py-16 md:py-24;
   }
 
   .fade-in {

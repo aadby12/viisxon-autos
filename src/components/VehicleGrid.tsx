@@ -9,8 +9,10 @@ type VehicleGridProps = {
 export function VehicleGrid({ vehicles, priorityCount = 0 }: VehicleGridProps) {
   if (vehicles.length === 0) {
     return (
-      <div className="border border-dashed border-brand-black/15 bg-brand-light px-6 py-16 text-center">
-        <p className="font-display text-xl font-semibold">No vehicles found</p>
+      <div className="border border-dashed border-brand-black/15 bg-white px-5 py-14 text-center sm:px-6 sm:py-16">
+        <p className="font-display text-lg font-semibold sm:text-xl">
+          No vehicles found
+        </p>
         <p className="mt-2 text-sm text-brand-gray">
           Try adjusting your filters or search terms.
         </p>
@@ -19,7 +21,7 @@ export function VehicleGrid({ vehicles, priorityCount = 0 }: VehicleGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
       {vehicles.map((vehicle, i) => (
         <VehicleCard
           key={vehicle.id}

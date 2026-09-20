@@ -12,30 +12,21 @@ export function FeaturedVehicles({ vehicles }: FeaturedVehiclesProps) {
       <div className="container-page">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-red">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-brand-red sm:text-xs">
               Inventory
             </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
+            <h2 className="mt-2 font-display text-2xl font-bold tracking-tight sm:mt-3 sm:text-3xl md:text-4xl">
               Featured Vehicles
             </h2>
           </div>
-          <Button href="/inventory" variant="outline" size="sm">
+          <Button href="/inventory" variant="outline" size="sm" className="w-full sm:w-auto">
             View All
           </Button>
         </div>
 
-        {/* Mobile: horizontal snap carousel */}
-        <div className="mt-10 flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:hidden -mx-4 px-4">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
           {vehicles.map((v, i) => (
-            <div key={v.id} className="w-[85%] shrink-0 snap-start sm:w-[70%]">
-              <VehicleCard vehicle={v} priority={i < 2} />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 hidden grid-cols-2 gap-5 md:grid xl:grid-cols-3">
-          {vehicles.map((v, i) => (
-            <VehicleCard key={v.id} vehicle={v} priority={i < 3} />
+            <VehicleCard key={v.id} vehicle={v} priority={i < 2} />
           ))}
         </div>
       </div>

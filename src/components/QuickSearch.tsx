@@ -56,15 +56,15 @@ export function QuickSearch() {
     "h-11 w-full border border-brand-black/10 bg-white px-3 text-sm text-brand-black focus:border-brand-red focus:outline-none";
 
   return (
-    <section className="relative z-10 -mt-10 md:-mt-14">
+    <section className="relative z-10 -mt-8 px-0 sm:-mt-10 md:-mt-14">
       <div className="container-page">
-        <div className="border border-brand-black/8 bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.12)] md:p-8">
-          <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+        <div className="border border-brand-black/8 bg-white p-4 shadow-[0_20px_60px_rgba(0,0,0,0.12)] sm:p-5 md:p-8">
+          <h2 className="font-display text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">
             Find Your Next Car
           </h2>
           <form
             onSubmit={onSubmit}
-            className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-5 grid grid-cols-1 gap-3 sm:mt-6 sm:grid-cols-2 lg:grid-cols-4"
           >
             <label className="block">
               <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-wider text-brand-gray">

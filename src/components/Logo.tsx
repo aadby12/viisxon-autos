@@ -24,7 +24,7 @@ export function Logo({
         alt="VIixson Autos"
         width={160}
         height={36}
-        className="h-8 w-auto md:h-9"
+        className="h-7 w-auto md:h-9"
         priority={priority}
       />
     </Link>

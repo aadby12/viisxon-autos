@@ -95,14 +95,14 @@ export default async function VehicleDetailPage({ params }: PageProps) {
   };
 
   return (
-    <div className="bg-white pt-24 md:pt-28">
+    <div className="overflow-x-hidden bg-white pt-20 md:pt-28">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="container-page pb-6">
-        <nav className="text-sm text-brand-gray" aria-label="Breadcrumb">
+      <div className="container-page pb-4 md:pb-6">
+        <nav className="truncate text-xs text-brand-gray sm:text-sm" aria-label="Breadcrumb">
           <Link href="/inventory" className="hover:text-brand-red">
             Inventory
           </Link>
@@ -111,16 +111,16 @@ export default async function VehicleDetailPage({ params }: PageProps) {
         </nav>
       </div>
 
-      <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-12">
+      <div className="container-page grid gap-8 lg:grid-cols-2 lg:gap-12">
         <VehicleGallery images={vehicle.images} alt={title} />
 
         <div>
           <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <h1 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+            <div className="min-w-0 flex-1">
+              <h1 className="font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
                 {title}
               </h1>
-              <p className="mt-3 text-3xl font-bold text-brand-red md:text-4xl">
+              <p className="mt-2 text-2xl font-bold text-brand-red sm:mt-3 sm:text-3xl md:text-4xl">
                 {formatPrice(vehicle.price)}
               </p>
             </div>
