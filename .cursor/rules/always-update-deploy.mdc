@@ -1,0 +1,22 @@
+---
+description: Always commit, push to GitHub, and keep Vercel updated when work is done
+alwaysApply: true
+---
+
+# Always update GitHub and Vercel when work is done
+
+When a task, feature, fix, or meaningful change set is finished:
+
+1. **Commit** the relevant changes (clear message; do not commit secrets).
+2. **Push** to `origin` on the current branch (`git push -u origin HEAD` if needed).
+3. **Confirm deploy** — this repo is linked to Vercel (`viixson-autos`). A push to `main` should auto-deploy. If auto-deploy did not run or production is stale, run `vercel deploy --prod --yes`.
+
+Do this without waiting for the user to ask again after they have established this preference.
+
+Skip only when:
+- There are no file changes to commit
+- The user explicitly says not to commit/push/deploy
+- Secrets or credentials would be included
+
+Remote: `https://github.com/aadby12/viisxon-autos.git`  
+Production: `https://viixson-autos.vercel.app`
